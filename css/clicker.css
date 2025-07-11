@@ -1,109 +1,136 @@
 /* =========== CLICKER ========== */
-.clicker__wrapper {
+.clicker__interface {
+  background: #1c1c1c;
+  border-radius: 20px;
+  padding: 15px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10% 0;
-  height: 100%;
-  gap: 20px;
+  gap: 15px;
 }
 
-.clicker__interface {
-  /* border: 1px solid #fff; */
+.controls {
+  width: 100%;
+  max-width: 650px;
+}
+
+.controls__balance {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 25px;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.controls__balance span {
+  display: block;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.controls__button {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: #232323;
+  font-weight: 700;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+
+  transition: background 0.2s, transform 0.2s;
+}
+.controls__button:active{
+  transform: scale(0.98);
+  background: #585858;
+}
+
+.upgrades {
+  width: 505px;
+  background: #232323;
+  padding: 5px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 50%;
-  gap: 90px;
-}
-
-.clicker__balance {
-  text-align: center;
-  font-size: 40px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.clicker__balance-amount {}
-
-.clicker__btn {
-  font-size: 40px;
-  font-weight: 800;
-  color: #000;
-  padding: 20px;
-  /* margin: 0 auto; */
-  min-width: 300px;
-  min-height: 300px;
-  border-radius: 20px;
-  transition: transform 0.2s;
-}
-
-.clicker__btn:hover {
-  transform: scale(1.03);
-}
-
-.clicker__btn:active {
-  transform: scale(0.98);
-}
-
-
-
-
-
-
-.upgrades {}
-
-.upgrades__list {
-  display: grid;
-  border: 1px solid #fff;
-  overflow: hidden;
-  border-radius: 20px;
-  width: 50%;
-  height: 100%;
+  gap: 5px;
 }
 
 .upgrades__element {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto;
-  border-bottom: 1px solid #fff;
+  display: flex;
+  gap: 5px;
 }
 
-.upgrades__element:last-child {
-  border-bottom: none;
+.upgrades__element>* {
+  border-radius: 10px;
+  background: #1c1c1c;
 }
 
-.upgrades__elem-title {
-  font-size: 40px;
-  padding: 0 20px;
-}
-
-.upgrades__elem-description {
-  font-size: 30px;
-  padding: 0 20px;
-}
-
-.upgrades__buy-btn {
+.upgrades__bought {
+  width: 90px;
+  height: 85px;
+  font-size: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
-  grid-column-start: 2;
-  grid-column-end: -1;
-  grid-row-start: 1;
-  grid-row-end: -1;
-  border-left: 1px solid #fff;
-  padding: 0 20px;
+}
+
+.upgrades__description {
+  padding: 0 13px;
+  width: 305px;
+  height: 85px;
+  font-size: 34px;
+
+
+}
+
+.upgrades__description span {
+  font-size: 22px;
+  display: block;
+}
+
+.upgrades__buy-btn {
   cursor: pointer;
-  transition: background 0.2s;
+  padding: 5px 2px;
+  width: 90px;
+  text-align: center;
+  height: 85px;
+  font-size: 34px;
+
+  transition: background 0.2s, transform 0.2s;
+  user-select: none;
+}
+.upgrades__buy-btn:active{
+  background: #585858;
 }
 
-.upgrades__buy-btn:hover {
-  background: #333;
+.upgrades__buy-btn span {
+  display: block;
+  font-size: 16px;
 }
 
-.upgrades__buy-btn:active {
-  background: #222;
-  transition: background 0.1s;
+.upgrades__element--1 {}
+
+.upgrades__element--2 {}
+
+.upgrades__element--3 {}
+
+.upgrades__element--4 {}
+
+.upgrades__element--5 {}
+
+/* =========== @media =========== */
+
+@media (min-width: 551px) {
+.controls__button:hover{
+  background: #585858;
 }
+
+}
+/* add hovers for PC ^ */
+
+@media (max-width: 750px) {}
+
+@media (max-width: 550px) {}
+
+@media (max-width: 340px) {}
