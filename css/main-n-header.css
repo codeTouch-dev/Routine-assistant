@@ -54,7 +54,6 @@
   animation: logo-animation 0.3s ease-in-out 0s 1 normal forwards;
 }
 
-
 @keyframes logo-animation {
   0% {
     opacity: 0%;
@@ -149,7 +148,40 @@
 
 
 
+/* ================ FOOTER ================ */
 
+footer{
+  padding: 10px;
+  margin-top: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.footer__author {
+  font-size: 18px;
+}
+.footer__line {
+  border-radius: 3px;
+width: 2px;
+height: 27px;
+background: #fff;
+}
+.footer__socials {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.footer__socials-item {
+}
+.footer__link {
+}
+.footer__link svg{
+  display: block;
+  width: 27px;
+  height: 27px;
+}
 
 /* =========================== */
 /* =========================== */
