@@ -54,6 +54,7 @@
   animation: logo-animation 0.3s ease-in-out 0s 1 normal forwards;
 }
 
+
 @keyframes logo-animation {
   0% {
     opacity: 0%;

@@ -124,7 +124,7 @@
   height: calc(100% - 20px);
   cursor: pointer;
   opacity: 0%;
-  transition: opacity 0.2s 0.2s, background 0.2s 0.2s;
+  transition: opacity 0.2s, background 0.2s 0.2s;
 }
 
 /* .completed__button:hover {
@@ -178,11 +178,13 @@
 .list__controls-plus {
   background: #4EC953;
   color: #3a913d;
+  user-select: none;
 }
 
 .list__controls-minus {
   background: #CF4848;
   color: #953434;
+  user-select: none;
 }
 
 .list__controls-plus:hover {
@@ -215,12 +217,14 @@
 .want-delete {
   width: calc(100% - 100px);
   transform: translateX(100px);
+  user-select: none;
 }
 
 .delete-btn {
   opacity: 100%;
   background: #CF4848 url('../img/icons/bin.svg') 50% 50%/40px no-repeat;
   transition: background 0.2s, filter 0.2s;
+  user-select: none;
 }
 
 .delete-btn:hover {
@@ -276,6 +280,7 @@
   font-size: 48px;
   transition: filter 0.2s, color 0.2s;
   color: #953434;
+  user-select: none;
 }
 
 .modal__close-btn span {
@@ -305,6 +310,7 @@
   justify-content: center;
   transition: filter 0.2s, color 0.2s;
   color: #3a913d;
+  user-select: none;
 }
 
 .modal__close-btn:hover {
@@ -317,7 +323,7 @@
   color: #cbffcc;
 }
 
-/* ================== */
+/* ============= MEDIA ============== */
 @media (min-width: 551px) {
   .list__item:hover {
     transform: translatex(100px);
@@ -326,6 +332,8 @@
 
   .completed__button:hover {
     opacity: 100%;
+
+  transition: opacity 0.2s, background 0.2s 0.2s;
   }
 }
 

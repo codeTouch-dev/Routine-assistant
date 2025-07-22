@@ -190,6 +190,7 @@
   width: 100%;
   font-size: 48px;
   cursor: pointer;
+  user-select: none;
 }
 
 .notes__controls-plus {
@@ -281,6 +282,7 @@
   font-size: 48px;
   transition: filter 0.2s, color 0.2s;
   color: #953434;
+  user-select: none;
 }
 
 .modal__close-btn span {
@@ -311,6 +313,7 @@
   justify-content: center;
   transition: filter 0.2s, color 0.2s;
   color: #3a913d;
+  user-select: none;
 }
 
 .modal__close-btn:hover {
