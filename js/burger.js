@@ -1,9 +1,9 @@
 const bodyElement = document.querySelector('.body')
 
 bodyElement.addEventListener('click', event => {
-  if (event.target && event.target.closest('.burger-icon') || event.target.closest('.nav__link') && bodyElement.closest('.nav__menu-open')) {
+  if (event.target.closest('.burger-menu') || event.target.closest('.nav__link') && bodyElement.closest('.body-menu--opened')) {
 
-    bodyElement.classList.toggle('nav__menu-open');
+    bodyElement.classList.toggle('body-menu--opened');
 
   }
 })
