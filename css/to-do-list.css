@@ -92,8 +92,6 @@
 
 .expand-btn {
   display: none;
-  align-items: center;
-  justify-content: center;
   position: absolute;
   right: 20px;
   top: 20px;
@@ -110,6 +108,8 @@
 
 .expand-btn--visible {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .expand-btn img {
@@ -135,14 +135,14 @@
 }
 
 .done .list__text {
-  color: rgba(29, 29, 29, 0.5);
+  color: rgba(29, 29, 29, 0.2);
   text-decoration: line-through;
 
   transition: color 0s;
 }
 
 .done .list__text::first-line {
-  color: rgba(29, 29, 29, 0.5);
+  color: rgba(29, 29, 29, 0.2);
   text-decoration: line-through;
 
   transition: color 0s;
@@ -152,7 +152,7 @@
   color: rgba(29, 29, 29, 0.5);
   text-decoration: line-through;
 
-  transition: color 0s;
+  transition: color 0s, transform 0.3s;
 }
 
 .done-btn {
@@ -347,6 +347,8 @@
   .list__item--swiped {
     transform: translatex(70px);
     width: calc(100% - 70px);
+
+    /* transform: transform 0.3s, width 0.3s; */
   }
 
   .list__title {
