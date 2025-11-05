@@ -30,9 +30,10 @@
   box-shadow: inset -4px -4px 10px 0 rgba(255, 255, 255, 0.7), inset 4px 4px 10px 0 rgba(84, 84, 84, 0.25), -1px -1px 1px 0 rgba(84, 84, 84, 0.1), 1px 1px 1px 0 rgba(255, 255, 255, 0.25);
   width: 100%;
   height: 100%;
+  max-height: 10000px;
   border-radius: 40px;
   position: relative;
-  /* overflow: hidden; */
+
   transition: transform 0.3s, width 0.3s;
 }
 
@@ -77,14 +78,20 @@
   max-height: 80px;
   padding: 16px 40px;
   overflow: hidden;
-  transition: max-height 0.5s;
   font-weight: 400;
   font-size: 32px;
   line-height: 150%;
+  color: rgba(29, 29, 29, 0.2);
+
+  transition: max-height 0.3s 0s, color 0.3s 0.3s;
+}
+
+.list__text::first-line {
+  color: rgba(29, 29, 29, 1);
 }
 
 .expand-btn {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   position: absolute;
@@ -101,6 +108,10 @@
   transition: background 0.3s, backdrop-filter 0.3s;
 }
 
+.expand-btn--visible {
+  display: flex;
+}
+
 .expand-btn img {
   width: 40px;
   height: 40px;
@@ -110,20 +121,44 @@
   transition: transform 0.3s;
 }
 
+.expand-btn--expanded img {
+  transform: rotate(180deg);
+}
+
 .list__text--expanded {
   max-height: 2000px;
+}
+
+.list__text.list__text--expanded {
+  color: rgba(29, 29, 29, 1);
+  transition: color 0.3s;
+}
+
+.done .list__text {
+  color: rgba(29, 29, 29, 0.5);
+  text-decoration: line-through;
+
+  transition: color 0s;
+}
+
+.done .list__text::first-line {
+  color: rgba(29, 29, 29, 0.5);
+  text-decoration: line-through;
+
+  transition: color 0s;
 }
 
 .done {
   color: rgba(29, 29, 29, 0.5);
   text-decoration: line-through;
+
+  transition: color 0s;
 }
 
 .done-btn {
   box-shadow: -1px -1px 1px 0 rgba(84, 84, 84, 0.1), 1px 1px 1px 0 rgba(255, 255, 255, 0.25), inset -4px -4px 10px 0 rgba(255, 255, 255, 0.7), inset 4px 4px 10px 0 rgba(84, 84, 84, 0.25);
-  transition: box-shadow 0.3s;
 
-  transition: background 0.3s;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 .list__controls {
@@ -135,7 +170,6 @@
 .list__controls-plus,
 .list__controls-minus {
   user-select: none;
-  height: 100%;
   border-radius: 40px;
   width: 100%;
   height: 80px;
@@ -252,14 +286,6 @@
   user-select: none;
 }
 
-.modal__close-btn:hover span {
-  opacity: 1;
-}
-
-.modal__save-btn:hover {
-  background: rgba(29, 29, 29, 0.4);
-}
-
 /* ============= MEDIA ============== */
 @media (min-width: 551px) {
   .list__item:hover {
@@ -295,6 +321,14 @@
   .list__controls-minus--active:hover {
     background: rgba(29, 29, 29, 0.4);
   }
+
+  .modal__close-btn:hover span {
+    opacity: 1;
+  }
+
+  .modal__save-btn:hover {
+    background: rgba(29, 29, 29, 0.4);
+  }
 }
 
 @media (max-width: 750px) {}
@@ -302,7 +336,8 @@
 @media (max-width: 550px) {
 
   .list__wrapper {
-    border-radius: 50px;
+    border-radius: 40px;
+    padding: 10px;
   }
 
   .list__item {
@@ -351,8 +386,6 @@
   .completed__button {
     top: 15px;
     left: 15px;
-    /* width: calc(100% - 30px); */
-    /* height: calc(100% - 30px); */
     width: 30px;
     height: 30px;
   }
@@ -361,12 +394,13 @@
     margin-top: 10px;
     gap: 10px;
   }
-.list__controls-plus,
-.list__controls-minus {
-  border-radius: 30px;
-  height: 60px;
-  font-size: 26px;
-}
+
+  .list__controls-plus,
+  .list__controls-minus {
+    border-radius: 30px;
+    height: 60px;
+    font-size: 26px;
+  }
 
   .want-delete {
     transform: translatex(70px);
@@ -374,53 +408,53 @@
   }
 
   .delete-btn {
-width: 30px;
-height: 30px;
+    background: url('../img/icons/cross.svg') 50% 50%/30px no-repeat;
+    width: 30px;
+    height: 30px;
   }
 
   .modal__window {
-    padding: 5px;
+    padding: 10px;
+    border-radius: 40px;
+  }
+
+  .modal__close-btn {
+    position: absolute;
+    top: -70px;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    box-shadow: 4px 4px 10px 1px rgba(84, 84, 84, 0.29), -4px -4px 10px 1px rgba(255, 255, 255, 0.7), inset -1px -1px 1px 0 rgba(84, 84, 84, 0.1), inset 1px 1px 1px 0 rgba(255, 255, 255, 0.25);
+    background: #d9d9d9;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal__close-btn span {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+
+  .modal__close-btn img {
+    width: 100%;
+    height: 100%;
   }
 
   .modal__input {
     height: 60px;
-    margin-bottom: 5px;
+    padding: 15px 20px;
     font-size: 20px;
-    padding: 15px 9px;
-  }
-
-  .modal__close-btn {
-    top: -55px;
-    font-size: 40px;
-
+    margin-bottom: 10px;
   }
 
   .modal__save-btn {
-    font-size: 28px;
+    height: 60px;
   }
-
 
 }
 
-@media (max-width: 350px) {
-  .list__title-text-elem {
-    font-size: 25px;
-    padding: 11px 9px;
-  }
-
-  .list__text {
-    font-size: 16px;
-    padding: 18px 9px;
-  }
-
-  .modal__input {
-    font-size: 16px;
-    padding: 18px 9px;
-  }
-
-  .modal__save-btn {
-    font-size: 25px;
-  }
-
-
-}
+@media (max-width: 350px) {}
