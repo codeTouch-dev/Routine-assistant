@@ -210,7 +210,6 @@ function loadTasksFromLocalStorage() {
     todoList.appendChild(li);
   });
 
-  const listItems = document.querySelectorAll('.list__item')
   const listTextEls = document.querySelectorAll('.list__text')
 
   // check if list__text is bigger than list__item
@@ -221,16 +220,15 @@ function loadTasksFromLocalStorage() {
   });
 }
 
-const listItems = document.querySelectorAll('.list__item')
-const listTextEls = document.querySelectorAll('.list__text')
+// const listTextEls = document.querySelectorAll('.list__text')
 
 // TO-DO LIST FUNCTIONALITY
 document.addEventListener('click', event => {
   const modal = document.querySelector('.modal')
   const eTarget = event.target
+  const listItems = document.querySelectorAll('.list__item')
   const modalInput = document.querySelector('.modal__input')
   const todoList = document.querySelector('.to-do-list');
-
 
   // DONE BUTTON FUNCTIONALITY
   if (eTarget.classList.contains('completed__button') && !eTarget.classList.contains('delete-btn')) {
