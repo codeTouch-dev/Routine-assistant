@@ -27,10 +27,6 @@
 }
 
 .list__item {
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 150%;
-
   box-shadow: inset -4px -4px 10px 0 rgba(255, 255, 255, 0.7), inset 4px 4px 10px 0 rgba(84, 84, 84, 0.25), -1px -1px 1px 0 rgba(84, 84, 84, 0.1), 1px 1px 1px 0 rgba(255, 255, 255, 0.25);
   width: 100%;
   height: 100%;
@@ -82,6 +78,9 @@
   padding: 16px 40px;
   overflow: hidden;
   transition: max-height 0.5s;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 150%;
 }
 
 .expand-btn {
@@ -298,15 +297,17 @@
   }
 }
 
-@media (max-width: 750px) {
-
-}
+@media (max-width: 750px) {}
 
 @media (max-width: 550px) {
 
-.list__wrapper {
-  border-radius: 50px;
-}
+  .list__wrapper {
+    border-radius: 50px;
+  }
+
+  .list__item {
+    border-radius: 30px;
+  }
 
   .list__item--swiped {
     transform: translatex(70px);
@@ -316,18 +317,12 @@
   .list__title {
     font-size: 20px;
     padding: 15px 20px;
-    margin-bottom: 10px;
-  }
-
-  .list__title-text-elem {
-    height: 60px;
-    font-size: 28px;
-    padding: 9px;
+    margin-bottom: 8px;
   }
 
   .to-do-list {
     gap: 10px;
-    padding: 5px 0;
+    padding: 2px 0;
   }
 
   .list__text {
@@ -338,54 +333,50 @@
   }
 
   .list__text--expanded {
-    max-height: 900px;
+    max-height: 2000px;
+  }
+
+  .expand-btn {
+    right: 10px;
+    top: 10px;
   }
 
   .list__item-checkbox {
     width: 60px;
     height: 60px;
-    left: -65px;
-    border: 5px solid #232323;
+    left: -70px;
     top: calc(50% - 30px);
   }
 
   .completed__button {
-    top: 5px;
-    left: 5px;
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
+    top: 15px;
+    left: 15px;
+    /* width: calc(100% - 30px); */
+    /* height: calc(100% - 30px); */
+    width: 30px;
+    height: 30px;
   }
 
   .list__controls {
-    padding: 0 5px 5px;
-    gap: 5px;
-    height: 60px;
+    margin-top: 10px;
+    gap: 10px;
   }
-
-  .list__controls-plus {
-    font-size: 40px;
-  }
-
-  .list__controls-minus {
-    font-size: 40px;
-  }
+.list__controls-plus,
+.list__controls-minus {
+  border-radius: 30px;
+  height: 60px;
+  font-size: 26px;
+}
 
   .want-delete {
-    transform: translatex(65px);
-    width: calc(100% - 65px);
+    transform: translatex(70px);
+    width: calc(100% - 70px);
   }
 
   .delete-btn {
-    opacity: 100%;
-    background: #CF4848 url('../img/icons/bin.svg') 50% 50%/30px no-repeat;
-    transition: background 0.2s, filter 0.2s;
+width: 30px;
+height: 30px;
   }
-
-  /* .delete-btn:hover {
-    filter: brightness(0.8);
-    background: #CF4848 url('../img/icons/bin-hover.svg') 50% 50%/30px no-repeat;
-    transition: background 0.2s, filter 0.2s;
-  } */
 
   .modal__window {
     padding: 5px;
