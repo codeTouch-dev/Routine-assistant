@@ -185,6 +185,14 @@ function saveTasksToLocalStorage() {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+  const listTextEls = document.querySelectorAll('.list__text')
+
+  // check if list__text is bigger than list__item
+  listTextEls.forEach((listText) => {
+    if (listText.scrollHeight > listText.clientHeight) {
+      listText.parentElement.querySelector('.expand-btn').classList.add('expand-btn--visible');
+    }
+  });
 
 // upload on start
 function loadTasksFromLocalStorage() {
@@ -210,17 +218,15 @@ function loadTasksFromLocalStorage() {
     todoList.appendChild(li);
   });
 
-  const listTextEls = document.querySelectorAll('.list__text')
+  // const listTextEls = document.querySelectorAll('.list__text')
 
-  // check if list__text is bigger than list__item
-  listTextEls.forEach((listText) => {
-    if (listText.scrollHeight > listText.clientHeight) {
-      listText.parentElement.querySelector('.expand-btn').classList.add('expand-btn--visible');
-    }
-  });
+  // // check if list__text is bigger than list__item
+  // listTextEls.forEach((listText) => {
+  //   if (listText.scrollHeight > listText.clientHeight) {
+  //     listText.parentElement.querySelector('.expand-btn').classList.add('expand-btn--visible');
+  //   }
+  // });
 }
-
-// const listTextEls = document.querySelectorAll('.list__text')
 
 // TO-DO LIST FUNCTIONALITY
 document.addEventListener('click', event => {
