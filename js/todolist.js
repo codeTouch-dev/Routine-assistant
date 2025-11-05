@@ -1,4 +1,4 @@
-// chatGPT code for work with localstorage
+// work with localstorage
 function saveTasksToLocalStorage() {
   const tasks = [];
   document.querySelectorAll('.list__item').forEach(item => {
@@ -12,7 +12,7 @@ function saveTasksToLocalStorage() {
 }
 
 
-// chatGPT code for upload on start
+// upload on start
 function loadTasksFromLocalStorage() {
   const saved = localStorage.getItem('tasks');
   if (!saved) return;
@@ -31,6 +31,7 @@ function loadTasksFromLocalStorage() {
       </div>
       <div class="space-filler"></div>
       <div class="list__text">${task.text}</div>
+      <span class="expand-btn"><img src="../img/icons/expand-arrow.svg" alt=""></span>
     `;
     todoList.appendChild(li);
   });
@@ -116,13 +117,13 @@ document.addEventListener('dblclick', event => {
   if (window.getSelection) {
     window.getSelection().removeAllRanges();
   } else if (document.selection) {
-    // Для старых IE
+    // for old IE
     document.selection.empty();
   }
 });
 
 
-// chatGPT code for adding temporary class by right swipe
+// code for adding temporary class by right swipe
 let touchStartX = 0;
 let touchEndX = 0;
 let swipeTarget = null;
