@@ -245,7 +245,6 @@ function loadTasksFromLocalStorage() {
   updateExpandButtons();
 }
 
-
 // ---------- MAIN INTERACTIONS ----------
 
 document.addEventListener('click', event => {
@@ -330,53 +329,13 @@ document.addEventListener('click', event => {
   }
 });
 
-
-// document.addEventListener('dblclick', event => {
-//   if (event.target.classList.contains('list__text')) {
-//     event.target.classList.toggle('list__text--expanded');
-//     if (window.getSelection) window.getSelection().removeAllRanges();
-//     else if (document.selection) document.selection.empty();
-//   }
-// });
 // DOUBLE CLICK TO EXPAND (optional fallback)
 document.addEventListener('dblclick', event => {
   if (event.target.parentElement.classList.contains('list__item')) {
-      event.target.parentElement.classList.add('list__item--swiped');
-      setTimeout(() => event.target.parentElement.classList.remove('list__item--swiped'), 1200);
+    event.target.parentElement.classList.add('list__item--swiped');
+    setTimeout(() => event.target.parentElement.classList.remove('list__item--swiped'), 1200);
   }
 });
-
-// ---------- SWIPE ANIMATION ----------
-
-// let touchStartX = 0;
-// let touchEndX = 0;
-// let swipeTarget = null;
-
-// document.addEventListener('touchstart', event => {
-//   const el = event.target.closest('.list__text');
-//   if (el) {
-//     touchStartX = event.changedTouches[0].screenX;
-//     swipeTarget = el;
-//   }
-// });
-
-// document.addEventListener('touchend', event => {
-//   if (!swipeTarget) return;
-//   touchEndX = event.changedTouches[0].screenX;
-//   const deltaX = touchEndX - touchStartX;
-
-//   if (deltaX > 40) {
-//     const parentItem = swipeTarget.closest('.list__item');
-//     if (parentItem) {
-//       parentItem.classList.remove('list__item--swiped');
-//       void parentItem.offsetWidth; // reflow
-//       parentItem.classList.add('list__item--swiped');
-//       setTimeout(() => parentItem.classList.remove('list__item--swiped'), 1200);
-//     }
-//   }
-
-//   swipeTarget = null;
-// });
 
 // ---------- INITIALIZATION ----------
 

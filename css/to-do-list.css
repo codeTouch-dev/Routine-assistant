@@ -83,7 +83,7 @@
   line-height: 150%;
   color: rgba(29, 29, 29, 0.2);
 
-  transition: max-height 0.3s 0s, color 0.3s 0.3s;
+  transition: max-height 0.3s, color 0.3s 0.3s;
 }
 
 .list__text::first-line {
