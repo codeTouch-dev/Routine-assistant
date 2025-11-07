@@ -333,7 +333,7 @@ document.addEventListener('click', event => {
 document.addEventListener('dblclick', event => {
   if (event.target.parentElement.classList.contains('list__item')) {
     event.target.parentElement.classList.add('list__item--swiped');
-    setTimeout(() => event.target.parentElement.classList.remove('list__item--swiped'), 1200);
+    setTimeout(() => event.target.parentElement.classList.remove('list__item--swiped'), 1700);
   }
 });
 
